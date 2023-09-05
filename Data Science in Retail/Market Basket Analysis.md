@@ -110,16 +110,24 @@ Aturan: {Pet Food} => {Sirup}
 Support: 0.4
 Confidence: 0.8000000
 Lift: 1.333333
+
+
 Aturan: {Sirup} => {Pet Food}
 
 Support: 0.4
 Confidence: 0.6666667
 Lift: 1.333333
+
+
+
 Aturan: {Gula, Pet Food} => {Sirup}
 
 Support: 0.1
 Confidence: 1.0000000
 Lift: 1.666667
+
+
+
 Aturan: {Pet Food, Teh Celup} => {Sirup}
 
 Support: 0.2
