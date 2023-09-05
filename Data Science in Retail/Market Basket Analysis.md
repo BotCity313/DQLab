@@ -45,3 +45,29 @@ Kode yang Anda berikan adalah contoh penggunaan library arules dalam bahasa pemr
 **Menampilkan Paket Produk**: Anda menggunakan fungsi inspect lagi untuk menampilkan aturan-aturan yang telah dihasilkan oleh model Market Basket Analysis. Anda menggunakan subset untuk hanya menampilkan aturan-aturan yang memiliki nilai "lift" lebih dari 1. Lift adalah salah satu metrik penting dalam Market Basket Analysis yang mengukur sejauh mana dua produk berkaitan satu sama lain.
 
 Dengan demikian, kode ini membantu Anda melakukan analisis Market Basket Analysis pada data transaksi yang telah dibaca, dan menampilkan aturan-aturan asosiasi yang relevan berdasarkan tingkat support, confidence, dan lift yang telah Anda tentukan.
+
+
+
+Berikut adalah kode yang setara dalam bahasa pemrograman Python menggunakan library mlxtend untuk melakukan analisis Market Basket Analysis:
+
+
+# Menggunakan library mlxtend
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+
+# Membaca transaksi dari file data_transaksi.txt
+import pandas as pd
+df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/data_transaksi.txt", sep="\t", header=None, skiprows=1, usecols=[0, 1])
+
+# Menampilkan data transaksi
+print(df)
+
+# Menghasilkan model Market Basket Analysis
+frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True)
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+
+# Menampilkan aturan asosiasi
+print(rules)
+
+
+Dalam kode Python ini, kita menggunakan library mlxtend untuk melakukan analisis Market Basket Analysis. Kami membaca data transaksi dari file "data_transaksi.txt" menggunakan Pandas, lalu menghasilkan model Market Basket Analysis dengan menghitung itemset yang sering muncul (frequent itemsets) dan aturan asosiasi (association rules) berdasarkan tingkat support dan lift yang telah ditentukan.
