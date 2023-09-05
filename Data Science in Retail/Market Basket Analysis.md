@@ -16,7 +16,7 @@ Menemukan jarak terpendek dengan para customer
 
 
 
-
+```
 #Menggunakan library arules
 library(arules)
 
@@ -31,6 +31,7 @@ mba <- apriori(transaksi,parameter = list(supp = 0.1, confidence = 0.5))
 
 #Menampilkan paket produk
 inspect(subset(mba, lift>1))
+```
 
 Kode yang Anda berikan adalah contoh penggunaan library arules dalam bahasa pemrograman R untuk melakukan analisis Market Basket Analysis. Saya akan menjelaskan setiap langkah yang Anda lakukan dalam kode tersebut:
 
@@ -50,7 +51,7 @@ Dengan demikian, kode ini membantu Anda melakukan analisis Market Basket Analysi
 
 Berikut adalah kode yang setara dalam bahasa pemrograman Python menggunakan library mlxtend untuk melakukan analisis Market Basket Analysis:
 
-
+```
 # Menggunakan library mlxtend
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
@@ -68,11 +69,11 @@ rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 
 # Menampilkan aturan asosiasi
 print(rules)
-
+```
 
 Dalam kode Python ini, kita menggunakan library mlxtend untuk melakukan analisis Market Basket Analysis. Kami membaca data transaksi dari file "data_transaksi.txt" menggunakan Pandas, lalu menghasilkan model Market Basket Analysis dengan menghitung itemset yang sering muncul (frequent itemsets) dan aturan asosiasi (association rules) berdasarkan tingkat support dan lift yang telah ditentukan.
 
-
+```
 Parameter specification:
  confidence minval smax arem  aval originalSupport maxtime support minlen
         0.5    0.1    1 none FALSE            TRUE       5     0.1      1
@@ -100,11 +101,12 @@ creating S4 object  ... done [0.00s].
 [2] {Sirup}              => {Pet Food} 0.4     0.6666667  1.333333
 [3] {Gula,Pet Food}      => {Sirup}    0.1     1.0000000  1.666667
 [4] {Pet Food,Teh Celup} => {Sirup}    0.2     0.6666667  1.111111
+```
 
 Pesan ini merupakan keluaran dari proses analisis Market Basket Analysis yang telah Anda jalankan. Di bawah ini, saya akan menjelaskan hasil dari analisis tersebut dalam bahasa Indonesia:
 
 Hasil analisis menunjukkan aturan-aturan asosiasi yang ditemukan berdasarkan parameter-parameter yang Anda atur sebelumnya:
-
+```
 Aturan: {Pet Food} => {Sirup}
 
 Support: 0.4
@@ -133,7 +135,7 @@ Aturan: {Pet Food, Teh Celup} => {Sirup}
 Support: 0.2
 Confidence: 0.6666667
 Lift: 1.111111
-
+```
 
 Dalam konteks analisis Market Basket, aturan-asosiasi ini mengindikasikan hubungan antara item yang dibeli bersama-sama dalam transaksi. Nilai Support mengukur seberapa sering kombinasi item tersebut muncul dalam transaksi, Confidence mengukur seberapa sering item yang satu muncul jika item lainnya ada, dan Lift mengukur seberapa kuatnya hubungan antara item-item tersebut dibandingkan dengan kemunculan acak.
 
